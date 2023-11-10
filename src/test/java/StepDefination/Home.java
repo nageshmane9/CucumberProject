@@ -1,5 +1,7 @@
 package StepDefination;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 
 import com.base.Base;
@@ -14,11 +16,12 @@ public class Home extends Base
 	HomePage home;
 	
 	@Given("User is on home page")
-	public void user_is_on_home_page() 
+	public void user_is_on_home_page() throws IOException 
 	{
+	   LaunchTheWeb();
 	   login.setInputusername(login.getUsername());
 	   login.setInputpassword(login.getPassword());
-	  home=  login.ClickOnLoginButton();
+	   home=  login.ClickOnLoginButton();
 	}
 
 	@When("Check logo is displayed or not")

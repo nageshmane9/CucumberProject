@@ -25,7 +25,7 @@ public class Base
 	
 	public static String projectpath= System.getProperty("user.dir"); 
 	
-	 public void LaunchTheWeb() throws IOException
+	 public WebDriver LaunchTheWeb() throws IOException
 	 {
 		 fileinputstream = new FileInputStream(".\\src\\main\\resources\\Property\\config.properties");
 		 
@@ -44,7 +44,7 @@ public class Base
 		 
 		 Utility.Implicitlywait();
 		 
-		 
+		 return driver;
 	 }
 	 
 		 

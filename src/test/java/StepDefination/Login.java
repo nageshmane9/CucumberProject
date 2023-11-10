@@ -2,6 +2,7 @@ package StepDefination;
 
 import java.io.IOException;
 
+
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -14,23 +15,23 @@ import io.cucumber.java.en.When;
 
 public class Login extends Base
 {
+	
       LoginPOM login = new LoginPOM();
       SoftAssert soft= new SoftAssert();
 	
 	@Given("User is on login page")
 	public void i_am_on_login_page() throws IOException 
 	{
-	   LaunchTheWeb();
-		
+	   driver=LaunchTheWeb();	
 	}
 
 	@When("Get title of the page")
 	public void get_title_of_the_page() 
 	{
-	    driver.getTitle();
+	   System.out.println( "Title :"+driver.getTitle());
 		
 	}
-
+  
 	@Then("Validate title of the page")
 	public void validate_title_of_the_page() 
 	{
@@ -59,6 +60,7 @@ public class Login extends Base
 	@When("Logo is displayed or not")
 	public void logo_is_displayed_or_not() 
 	{
+		System.out.println("Step1");
 	    login.Logo();
 	}
 
@@ -114,6 +116,8 @@ public class Login extends Base
 	  	
 	  	soft.assertAll();
 	}
+	
+	
 
 	@When("Enter blank username and valid password")
 	public void enter_blank_username_and_valid_password() 
